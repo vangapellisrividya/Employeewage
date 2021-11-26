@@ -9,7 +9,8 @@
 import random
 
 class Employeewage:
-
+    #static variable
+    wageperhour = 20
     def display(self):
         """
             Description:
@@ -43,7 +44,28 @@ class Employeewage:
             else:
                 print(" Employee is Absent")
             break
-            
+
+    def calculate_wage(self):
+        """
+            Description:
+                This function calculates the employee wages
+                in given condition
+                program
+            Prameters:
+                self
+            Return:
+                None
+        """
+        self.ispresent  =   1
+        self.isabsent   =   0
+        empCheck = random.randint(0,1) 
+       
+        if empCheck== 1:
+            self.workinghours = 8
+        else:
+            self.workinghours = 0
+        employeewage = self.workinghours * self.wageperhour
+        print(" Employee wage is: ",employeewage)     
 
 
     
@@ -51,6 +73,7 @@ if __name__=='__main__':
     emp=Employeewage()
     emp.display()
     emp.attendance()
+    emp.calculate_wage()
     
     
     
