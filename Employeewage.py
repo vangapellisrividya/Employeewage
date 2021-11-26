@@ -88,7 +88,26 @@ class Employeewage:
         else:
             self.workinghours = 0
         employeewage = self.workinghours * self.wageperhour
-        print(" Employee wage is: ",employeewage)     
+        print(" Employee wage is: ",employeewage)   
+
+    def switcher(self):
+        """
+            Description:
+                This function calculates the employee working
+                fulltime or parttime
+                in given condition
+                program
+            Prameters:
+                self
+            Return:
+                None
+        """
+        switcher={
+            0: Employeewage.calculate_wage(self),
+
+            1: Employeewage.parttime(self),
+            }
+          
 
 
     
@@ -98,6 +117,8 @@ if __name__=='__main__':
     emp.attendance()
     emp.parttime()
     emp.calculate_wage()
+    emp.switcher()
+
     
     
     
