@@ -108,6 +108,33 @@ class Employeewage:
             1: Employeewage.parttime(self),
             }
           
+    
+    def month_wage(self):
+        """
+            Description:
+                This function calculates the employee wages
+                in given condition
+                program
+            Prameters:
+                self
+            Return:
+                None
+        """
+        empCheck = random.randint(0,2)
+        daysof_month = 20
+       
+        if empCheck == 1:
+            self.workinghours = 8
+            print(" Employee working fulltime ")
+        elif empCheck == 2 :
+            self.workinghours = 4
+            print(" Employee working parttime ")
+        else:
+            self.workinghours = 0
+            print(" Employee is absent ")
+        employeewage = self.workinghours * Employeewage.wageperhour
+        total_empwage = employeewage * daysof_month
+        print(" Employee month wage is: ",total_empwage)
 
 
     
@@ -118,6 +145,7 @@ if __name__=='__main__':
     emp.parttime()
     emp.calculate_wage()
     emp.switcher()
+    emp.month_wage()
 
     
     
